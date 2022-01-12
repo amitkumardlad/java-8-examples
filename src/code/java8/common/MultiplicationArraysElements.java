@@ -30,6 +30,7 @@ public class MultiplicationArraysElements {
 		}
 
 		System.out.println(Arrays.toString(ints));
+		//System.arraycopy(src, srcPos, dest, destPos, length);
 		
 	}
 

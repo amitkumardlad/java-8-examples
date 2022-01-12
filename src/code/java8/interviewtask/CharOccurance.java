@@ -2,6 +2,8 @@ package code.java8.interviewtask;
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 public class CharOccurance {
 
@@ -28,6 +30,10 @@ public class CharOccurance {
 			System.out.println( mapData.getKey() +"::"+ mapData.getValue());
 		}
 		
-		//occurance.entrySet().stream().forEach((Entry<k,v> e)=> System.out.print(k+""+v));
+		//Using Lambda Expression
+		string.chars().mapToObj(i -> Character.valueOf((char) i))
+				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream()
+				.forEach(System.out::println);
+		
 	}
 }
