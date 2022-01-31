@@ -7,9 +7,16 @@ import java.util.stream.Collectors;
 
 public class CharOccurance {
 
+	public static void test1(String a) {
+		System.out.println("String a::"+a);
+	}
+	
+	public static void test1(Object a) {
+		System.out.println("String aa::"+a);
+	}
 
 	public static void main(String[] args) {
-		
+		test1(null);
 		showCharacterOccurance("Occurances");
 	}
 
@@ -32,7 +39,8 @@ public class CharOccurance {
 		
 		//Using Lambda Expression
 		string.chars().mapToObj(i -> Character.valueOf((char) i))
-				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting())).entrySet().stream()
+				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+				.entrySet().stream()
 				.forEach(System.out::println);
 		
 	}
